@@ -16,7 +16,7 @@ public class Deck {
 		//cards.add(card);
 		//Sample code end
 		for(int n = 0; n < nDeck; n++) {
-			for(int i = 1; i <= 4; i++) {
+			for(Card.Suit i : Card.Suit.values()) {
 				for(int j = 1; j <= 13; j++) {
 					Card card = new Card(i,j);
 					cards.add(card);
@@ -54,8 +54,11 @@ public class Deck {
 	
 	public Card getOneCard() {
 		Card tempCard = cards.get(nUsed);
-		usedCard.set(nUsed, tempCard);
+		usedCard.add(tempCard);
 		nUsed++;
+		if(nUsed >= cards.size()) {
+			shuffle();
+		}
 		return tempCard;
 	}
 }

@@ -1,6 +1,6 @@
 public class Card {
 	public enum Suit {Club, Diamond, Heart, Spade}
-	private int suit; //Definition: 1~4, Clubs=1, Diamonds=2, Hearts=3, Spades=4
+	private Suit suit; 
 	private int rank; //1~13
 	
 	/**
@@ -16,16 +16,16 @@ public class Card {
 	public void printCard() {
 		//Hint: print (System.out.println) card as suit,rank, for example: print 1,1 as Clubs Ace
 		switch(getSuit()) {
-		case 1:
+		case Club:
 			System.out.print("Clubs ");
 			break;
-		case 2:
+		case Diamond:
 			System.out.print("Diamonds ");
 			break;
-		case 3:
+		case Heart:
 			System.out.print("Hearts ");
 			break;
-		case 4:
+		case Spade:
 			System.out.print("Spades ");
 			break;
 		default:
@@ -78,8 +78,8 @@ public class Card {
 
 	}
 	
-	public enum getSuit() {
-		return Suit;
+	public Suit getSuit() {
+		return suit;
 	}
 	
 	public int getRank() {
